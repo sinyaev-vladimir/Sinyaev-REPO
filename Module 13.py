@@ -17,4 +17,7 @@ for i in range(count):
     elif 24 < age[i]:
         price += 1390
 
+if count > 3:
+    price *= 0.9
+
 print(f"стоимость {count} билетов: {price} руб.")
