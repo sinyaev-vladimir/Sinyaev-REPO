@@ -19,3 +19,15 @@ class Circle:
 
     def get_area_circle(self):
         return 3.14 * self.r ** 2
+
+class Triangle:
+    def __init__(self, x, h):
+        self.x = x
+        self.h = h
+
+    def get_area_triangle(self):
+        return (self.x * self.h) / 2
+
+    # метод для возвращения параметров фигуры в строку
+    def get_triangle_args(self):
+        return (f"длина гипотенузы: {self.x}, высота треугольника: {self.h}")

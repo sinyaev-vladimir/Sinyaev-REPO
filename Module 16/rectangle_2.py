@@ -1,4 +1,4 @@
-from rectangle import Rectangle, Square, Circle
+from rectangle import Rectangle, Square, Circle, Triangle
 
 # Создание прямоугольников
 
@@ -26,10 +26,17 @@ c2 = Circle(3)
 print("Площадь круга", c1.get_area_circle())
 print("Площадь круга", c2.get_area_circle())
 
+t1 = Triangle(2, 6)
+t2 = Triangle(3, 4)
+
+print("Площадь треугольника", t1.get_area_triangle())
+print("Площадь треугольника", t2.get_area_triangle())
+print(t1.get_triangle_args())   # Вызов метода для возвращения параметров фигуры в строку
+
 # Теперь мы хотим в нашей программе все объекты перенести в единую коллекцию. Назовем фигуры (figures).
 # Коллекция содержит список, в который мы помещаем наш первый прямоугольник, квадрат и т.д.
 
-figures =[r1, r2, s1, s2, c1, c2]
+figures =[r1, r2, s1, s2, c1, c2, t1, t2]
 
 # Далее пройдемся по циклу for:
 # Это необходимо, чтобы найти площадь каждой фигуры, сохраненной в списке figures.
@@ -44,6 +51,8 @@ for fig in figures:
         print("Площадь квадрата: ", fig.get_square())       # экземпляром класса или экземпляром класса из кортежа.
     elif isinstance(fig, Circle):                           # функция isinstance проверяет, является ли аргумент объекта
         print("Площадь круга", fig.get_area_circle())       # В случае если является, функция возвращает True, если не является — False.
+    elif isinstance(fig, Triangle):
+        print("Площадь треугольника", fig.get_area_triangle())
     else:
         print("Площадь прямоугольника: ", fig.get_area())
 
